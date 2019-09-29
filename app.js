@@ -1,6 +1,6 @@
 class Pokemon {
-    async getAllPokemon() {
-        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/`)
+    async getPokemon(id) {
+        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
         const responseData = response.json()
         return responseData
     }
@@ -9,6 +9,20 @@ class Pokemon {
 const pokemon = new Pokemon
 const pokemonUI = new PokemonUI
 
-pokemon.getAllPokemon().then(data => {
-    pokemonUI.pokemonCard(data.results)
+let count = [1,2,3,4,5]
+
+count.forEach((id) => {
+    pokemon.getPokemon(id).then(data => {
+        pokemonUI.pokemonCard(data)
+    })
+})
+
+document.getElementById('next').addEventListener('click', () => {
+    count = count.map(num => {return num + 5});
+    pokemonUI.clearPokemon()
+    count.forEach((id) => {
+        pokemon.getPokemon(id).then(data => {
+            pokemonUI.pokemonCard(data)
+        })
+    })
 })
