@@ -1,0 +1,120 @@
+.type {
+  display: inline-block;
+  padding: 5px 10px;
+  border: 1px solid;
+  border-radius: 15px;
+  font-size: .6rem;
+  text-transform: uppercase;
+
+  &:not(:last-child) {
+    margin-right: 5px;
+  }
+
+  &.grass {
+    background: honeydew;
+    color: darkgreen;
+    border-color: darkgreen;
+  }
+
+  &.poison {
+    background: lavender;
+    color: purple;
+    border-color: purple;
+  }
+
+  &.fire {
+    background: lightyellow;
+    color: orangered;
+    border-color: orangered;
+  }
+
+  &.flying {
+    background: azure;
+    color: navy;
+    border-color: navy;
+  }
+  
+  &.water {
+    background: azure;
+    color: mediumblue;
+    border-color: mediumblue;
+  }
+
+  &.normal {
+    background: seashell;
+    color: saddlebrown;
+    border-color: saddlebrown;
+  }
+
+  &.electric {
+    background: ivory;
+    color: darkorange;
+    border-color: darkorange;
+  }
+
+  &.ice {
+    background: azure;
+    color: navy;
+    border-color: navy;
+  }
+
+  &.fighting {
+    background: mistyrose;
+    color: crimson;
+    border-color: crimson;
+  }
+
+  &.ground {
+    background: ghostwhite;
+    color: sienna;
+    border-color: sienna;
+  }
+
+  &.psychic {
+    background: floralwhite;
+    color: deeppink;
+    border-color: deeppink;
+  }
+
+  &.bug {
+    background: mintcream;
+    color: darkolivegreen;
+    border-color: darkolivegreen;
+  }
+
+  &.rock {
+    background: whitesmoke;
+    color: dimgrey;
+    border-color: dimgrey;
+  }
+
+  &.ghost {
+    background: aliceblue;
+    color: darkcyan;
+    border-color: darkcyan;
+  }
+
+  &.dragon {
+    background: lightcyan;
+    color: indigo;
+    border-color: indigo;
+  }
+
+  &.dark {
+    background: lavenderblush;
+    color: firebrick;
+    border-color: firebrick;
+  }
+
+  &.steel {
+    background: snow;
+    color: steelblue;
+    border-color: steelblue;
+  }
+
+  &.fairy {
+    background: oldlace;
+    color: magenta;
+    border-color: magenta;
+  }
+}
