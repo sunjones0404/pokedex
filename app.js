@@ -9,7 +9,7 @@ class Pokemon {
 const pokemon = new Pokemon
 const pokemonUI = new PokemonUI
 
-let count = [1,2,3,4,5]
+let count = [1]
 
 count.forEach((id) => {
     pokemon.getPokemon(id).then(data => {
@@ -18,7 +18,7 @@ count.forEach((id) => {
 })
 
 document.getElementById('next').addEventListener('click', () => {
-    count = count.map(num => {return num + 5});
+    count = count.map(num => {return ++num});
     pokemonUI.clearPokemon()
     count.forEach((id) => {
         pokemon.getPokemon(id).then(data => {

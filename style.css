@@ -1,91 +1,161 @@
 html {
-    box-sizing: border-box;
-    font-size: 16px;
-  }
-  
-  *, *:before, *:after {
-    box-sizing: inherit;
-  }
-  
-  body, h1, h2, h3, h4, h5, h6, p, ol, ul {
-    margin: 0;
-    padding: 0;
-    font-weight: normal;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-  
-  ol, ul {
-    list-style: none;
-  }
-  
-  img {
-    max-width: 100%;
-    height: auto;
-  }
+  box-sizing: border-box;
+  font-size: 16px;
+}
 
-  main {
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100vw;
-      height: 100vh;
-      background-color: darkred;
-  }
+*, *:before, *:after {
+  box-sizing: inherit;
+}
 
-  .pokedex-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-      width: 300px;
-      height: 600px;
-      background-color: darkred;
-      border: 10px solid white;
-      border-radius: 30px;
-      padding: 15px;
-  }
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+  font-family: Arial, Helvetica, sans-serif;
+}
 
-  .pokedex-list {
-      width: 100%;
-      height: 100%;
-      overflow-x: hidden;
-      overflow-y: scroll;
-  }
+ol, ul {
+  list-style: none;
+}
 
-  .pokedex-list__item {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      height: auto;
-      background-color: white;
-      border-radius: 10px;
-      padding: 10px;
-  }
+img {
+  max-width: 100%;
+  height: auto;
+}
 
-  .pokedex-list__row {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: top;
-    justify-content: space-between;
+main {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: darkslategrey;
+}
 
-  }
+.pokedex-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 600px;
+  background-color: lightseagreen;
+}
 
-  .pokedex-list__item:not(:first-child) {
-      margin-top: 15px;
-  }
+.pokedex-list {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
 
-  .pokemon-title {
-    font-size: .8rem;
-    font-weight: bold;
-    color: grey;
-  }
+.pokedex-list__item {
+  display: flex;
+  flex-direction: column;
+  height: 70vh;
+  width: 100%;
+  background-color: white;
+  border-radius: 15px 15px 0 0;
+  padding: 10px;
+  box-shadow: 0 0 50px rgba(0,0,0,0.2);
+}
 
-  .pokemon-name {
-    font-weight: bold;
-  }
+.pokedex-list__row {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  align-items: top;
+  justify-content: space-between;
+}
 
-  .pokemon-img {
-      max-height: 100%;
-  }
+.pokedex-list__item:not(:first-child) {
+  margin-top: 15px;
+}
+
+.pokemon-title {
+  font-size: .8rem;
+  font-weight: bold;
+  color: grey;
+}
+
+.pokemon-name {
+  font-weight: bold;
+}
+
+.pokemon-img {
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 80px;
+  width: 80px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  overflow: hidden;
+}
+
+.btn {
+  position: absolute;
+  bottom: 20px;
+  background-color: white;
+  padding: 10px 20px;
+  border: 1px solid lightgrey;
+  color: silver;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all .2s;
+  outline: none;
+}
+
+.btn:hover {
+  background-color: silver;
+  color: white;
+}
+
+.type {
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: .6rem;
+  border: 1px solid;
+  border-radius: 15px;
+  text-transform: uppercase;
+}
+
+.type:not(:last-child) {
+  margin-right: 5px;
+}
+
+.type.grass {
+  background: lightgreen;
+  color: darkgreen;
+  border-color: darkgreen;
+}
+
+.type.poison {
+  background: lavender;
+  color: purple;
+  border-color: purple;
+}
+
+.type.fire {
+  background: lightyellow;
+  color: orange;
+  border-color: orange;
+}
+
+.type.flying {
+  background: lightskyblue;
+  color: navy;
+  border-color: navy;
+}
+
