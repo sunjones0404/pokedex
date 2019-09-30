@@ -16,7 +16,21 @@ main {
   align-items: center;
   width: 300px;
   height: 600px;
-  background-color: lightseagreen;
+  background: lightseagreen;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 600px;
+    top: 0;
+    left: 0;
+    background: url('../img/pokeball.png');
+    background-position: left top -70px;
+    background-size: 500px;
+    background-repeat: no-repeat;
+    opacity: .1;
+  }
 }
 
 .pokedex-list {
@@ -27,12 +41,13 @@ main {
   height: 100%;
   overflow-x: hidden;
   overflow-y: scroll;
+  z-index: 999;
 }
 
 .pokedex-list__item {
   display: flex;
   flex-direction: column;
-  height: 70vh;
+  height: 80%;
   width: 100%;
   background-color: white;
   border-radius: 15px 15px 0 0;
