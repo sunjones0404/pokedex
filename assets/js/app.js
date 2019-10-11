@@ -11,16 +11,16 @@ const pokemonUI = new PokemonUI
 
 let count = [1]
 
-count.forEach((id) => {
+count.forEach(id => {
     pokemon.getPokemon(id).then(data => {
         pokemonUI.pokemonCard(data)
     })
 })
 
 document.getElementById('next').addEventListener('click', () => {
-    count = count.map(num => {return ++num});
+    count = count.map(num => {return ++num})
     pokemonUI.clearPokemon()
-    count.forEach((id) => {
+    count.forEach(id => {
         pokemon.getPokemon(id).then(data => {
             pokemonUI.pokemonCard(data)
         })

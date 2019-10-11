@@ -10,6 +10,11 @@ clearPokemon() {
 pokemonCard(pokemon) {
   const pokemonHeader = document.querySelector('.pokemon-header')
   const pokemonTypes = document.querySelector('.pokemon-types')
+  const background = document.querySelector('.container')
+
+  background.className = `container bg ${pokemon.types[0].type.name}`
+
+    console.log(pokemon.types[0].type.name)
 
   const pokemonHeaderInfo = `
       <p class="name">
