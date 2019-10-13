@@ -1,31 +1,57 @@
 class PokemonUI {
+  clearPokemon() {
+    const pokemonHeader = document.querySelector('.pokemon-header')
+    const pokemonTypes = document.querySelector('.pokemon-types')
+    pokemonHeader.innerHTML = ''
+    pokemonTypes.innerHTML = ''
+  }
 
-clearPokemon() {
-  const pokemonHeader = document.querySelector('.pokemon-header')
-  const pokemonTypes = document.querySelector('.pokemon-types')
-  pokemonHeader.innerHTML = ''
-  pokemonTypes.innerHTML = ''
-}
+  pokemonCard(pokemon) {
+    const pokemonHeader = document.querySelector('.pokemon-header')
+    const pokemonTypes = document.querySelector('.pokemon-types')
+    const background = document.querySelector('.container')
 
-pokemonCard(pokemon) {
-  const pokemonHeader = document.querySelector('.pokemon-header')
-  const pokemonTypes = document.querySelector('.pokemon-types')
-  const background = document.querySelector('.container')
+    background.className = `container bg ${pokemon.types[0].type.name}`
 
-  background.className = `container bg ${pokemon.types[0].type.name}`
-
-    console.log(pokemon.types[0].type.name)
-
-  const pokemonHeaderInfo = `
+    const pokemonHeaderInfo = `
       <p class="name">
           ${pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}
       </p>
       <img class="img" src="${pokemon.sprites.front_default}">
+
+      <div class="progress-wrapper">
+
+        ${pokemon.stats
+          .map(
+            pokemon =>
+              `
+          <div class="progress-bar">
+          <p class="progress-bar__title">${pokemon.stat.name
+            .charAt(0)
+            .toUpperCase() +
+            pokemon.stat.name.slice(1)} <span class="progress-bar__stat">${
+                pokemon.base_stat
+              }</span>
+          </p>
+          <div class="progress-bar__outer">
+            <div class="progress-bar__inner" style="width: ${
+              pokemon.base_stat
+            }%">
+              <div class="progress-bar__inner-fill"></div>
+            </div>
+          </div>
+        </div>
+          `
+          )
+          .join('')}
+      </div>
   `
 
-  const pokemonTypesInfo = `
-    ${pokemon.types.map(type => (
-      `<li class="
+    const pokemonTypesInfo = `
+    ${pokemon.types
+      .map(
+        type =>
+          `<li class="
           ${type.type.name === 'poison' ? 'type poison' : 'type default'}
           ${type.type.name === 'grass' ? 'type grass' : 'type default'}
           ${type.type.name === 'fire' ? 'type fire' : 'type default'}
@@ -45,10 +71,11 @@ pokemonCard(pokemon) {
           ${type.type.name === 'steel' ? 'type steel' : 'type default'}
           ${type.type.name === 'fairy' ? 'type fairy' : 'type default'}
       ">${type.type.name}</li>`
-    )).join("")}
+      )
+      .join('')}
   `
 
-  pokemonHeader.innerHTML += pokemonHeaderInfo
-  pokemonTypes.innerHTML += pokemonTypesInfo
+    pokemonHeader.innerHTML += pokemonHeaderInfo
+    pokemonTypes.innerHTML += pokemonTypesInfo
   }
 }

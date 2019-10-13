@@ -1,9 +1,9 @@
 .type {
   display: inline-block;
-  padding: 5px 10px;
+  padding: 3px 7px;
   border: 1px solid;
   border-radius: 15px;
-  font-size: .6rem;
+  font-size: 0.6rem;
   text-transform: uppercase;
 
   &:not(:last-child) {
@@ -33,7 +33,7 @@
     color: navy;
     border-color: navy;
   }
-  
+
   &.water {
     background: azure;
     color: mediumblue;

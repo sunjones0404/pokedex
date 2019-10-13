@@ -6,12 +6,20 @@
   border: 1px solid lightgrey;
   color: silver;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 0.8rem;
   border-radius: 20px;
   cursor: pointer;
-  transition: all .2s;
+  transition: all 0.2s;
   outline: none;
   z-index: 999;
+
+  &--previous {
+    left: 20px;
+  }
+
+  &--next {
+    right: 20px;
+  }
 }
 
 .btn:hover {
