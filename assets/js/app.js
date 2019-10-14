@@ -1,5 +1,7 @@
 class Pokemon {
   async getPokemon(id) {
+    const loader = `<div class="loader"></div>`
+    document.querySelector('.pokemon-header').innerHTML = loader
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
     const responseData = response.json()
     return responseData
