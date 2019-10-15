@@ -1,17 +1,20 @@
 class Pokemon {
   async getPokemon(id) {
-      // Loader
+    // Loader
     const pokemonHeader = document.querySelector('.pokemon-header')
-    pokemonHeader.innerHTML = '<img class="loader" src="./assets/img/pokeball.png" alt="Loader">'
-    
+    pokemonHeader.innerHTML = `
+    <div class="loader-wrapper">
+      <img class="loader" src="./assets/img/pokeball.png" alt="Loader" />
+    </div>
+    `
+
     try {
-        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
-        const responseData = response.json()
-        return responseData
-    } catch(err) {
-        console.error(err)
+      const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
+      const responseData = response.json()
+      return responseData
+    } catch (err) {
+      console.error(err)
     } finally {
-        
     }
   }
 }
