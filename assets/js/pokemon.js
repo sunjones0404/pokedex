@@ -75,7 +75,7 @@ class PokemonUI {
       .join('')}
   `
 
-    pokemonHeader.innerHTML += pokemonHeaderInfo
-    pokemonTypes.innerHTML += pokemonTypesInfo
+    pokemonHeader.innerHTML = pokemonHeaderInfo
+    pokemonTypes.innerHTML = pokemonTypesInfo
   }
 }

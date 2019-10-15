@@ -1,10 +1,17 @@
 class Pokemon {
   async getPokemon(id) {
+      // Loader
     const loader = `<div class="loader"></div>`
     document.querySelector('.pokemon-header').innerHTML = loader
-    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
-    const responseData = response.json()
-    return responseData
+    try {
+        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
+        const responseData = response.json()
+        return responseData
+    } catch(err) {
+        console.error(err)
+    } finally {
+        // Loader stop here (optional)
+    }
   }
 }
 
