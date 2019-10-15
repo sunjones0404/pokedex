@@ -1,8 +1,9 @@
 class Pokemon {
   async getPokemon(id) {
       // Loader
-    const loader = `<div class="loader"></div>`
-    document.querySelector('.pokemon-header').innerHTML = loader
+    const pokemonHeader = document.querySelector('.pokemon-header')
+    pokemonHeader.innerHTML = '<img class="loader" src="./assets/img/pokeball.png" alt="Loader">'
+    
     try {
         const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
         const responseData = response.json()
@@ -10,7 +11,7 @@ class Pokemon {
     } catch(err) {
         console.error(err)
     } finally {
-        // Loader stop here (optional)
+        
     }
   }
 }
