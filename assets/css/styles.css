@@ -149,7 +149,9 @@ main {
   border-radius: 10px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   overflow: hidden;
+  opacity: 0;
   z-index: 2;
+  animation: fade 0.5s linear forwards;
 }
 
 .pokemon-types {
@@ -228,6 +230,11 @@ main {
 @keyframes spin {
   100% {
     transform: rotate(360deg);
+  }
+}
+@keyframes fade {
+  100% {
+    opacity: 1;
   }
 }
 .btn {
